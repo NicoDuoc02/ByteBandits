@@ -34,9 +34,9 @@ public class ClienteController {
         return clienteService.update(cliente);
     }
     // Eliminar un cliente
-    @DeleteMapping("/eliminar/{id}")
-    public void eliminarCliente(@PathVariable String id) {
-        clienteService.delete(id);
+    @DeleteMapping("/eliminar/{rut}{dvcliente}")
+    public void eliminarCliente(@PathVariable String rut) {
+        clienteService.delete(rut);
     }
 
     // Buscar un cliente por ID
