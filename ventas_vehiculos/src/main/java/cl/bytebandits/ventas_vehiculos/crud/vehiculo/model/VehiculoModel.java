@@ -1,4 +1,4 @@
-package cl.bytebandits.ventas_vehiculos.model;
+package cl.bytebandits.ventas_vehiculos.crud.vehiculo.model;
 
 import java.sql.Date;
 

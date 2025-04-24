@@ -1,11 +1,10 @@
-package cl.bytebandits.ventas_vehiculos.service.IMPL;
-
+package cl.bytebandits.ventas_vehiculos.crud.vehiculo.service.IMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.bytebandits.ventas_vehiculos.model.VehiculoModel;
-import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
-import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.model.VehiculoModel;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.repository.IVehiculoRepository;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.service.IVehiculoService;
 
 @Service
 public class VehiculoServiceIMPL implements IVehiculoService{

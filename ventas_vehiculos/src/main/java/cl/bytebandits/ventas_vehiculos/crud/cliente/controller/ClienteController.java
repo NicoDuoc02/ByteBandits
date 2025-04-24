@@ -27,11 +27,12 @@ public class ClienteController {
     }
 
     // Actualizar un cliente
-    @PutMapping("/editar")
-    public ClienteModel actualizarCliente(@RequestBody ClienteModel cliente) {
-        return clienteService.update(null, cliente);
+    @PutMapping("/editar/{rut}{dvcliente}")
+    public ClienteModel actualizarCliente(@PathVariable String rut, @RequestBody ClienteModel cliente) {
+        cliente.getRut_cliente();
+        cliente.getDv_cliente(); // Asegurarse de que el RUT del cliente a actualizar sea el correcto
+        return clienteService.update(cliente);
     }
-
     // Eliminar un cliente
     @DeleteMapping("/eliminar/{id}")
     public void eliminarCliente(@PathVariable String id) {

@@ -1,6 +1,5 @@
-package cl.bytebandits.ventas_vehiculos.service;
-
-import cl.bytebandits.ventas_vehiculos.model.VehiculoModel;
+package cl.bytebandits.ventas_vehiculos.crud.vehiculo.service;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.model.VehiculoModel;
 
 public interface IVehiculoService {
     public VehiculoModel create(VehiculoModel vehiculo);
