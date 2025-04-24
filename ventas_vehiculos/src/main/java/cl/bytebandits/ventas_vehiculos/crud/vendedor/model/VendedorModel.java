@@ -1,5 +1,4 @@
-package cl.bytebandits.ventas_vehiculos.crud.cliente.model;
-
+package cl.bytebandits.ventas_vehiculos.crud.vendedor.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,27 +9,20 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 @Entity
-@Table(name="cliente")   
+@Table(name="vendedor")   
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
-
-
-public class ClienteModel {
-
+public class VendedorModel {
         @Id
-        @Column(name = "rut_cliente")
-        private String rut_cliente;
-        private String dv_cliente;
-        private String nombre_cliente;
+        @Column(name = "rut_vendedor")
+        private String rut_vendedor;
+        private String dv_vendedor;
+        private String nombre_vendedor;
         private String app_paterno;
         private String app_materno;
-        private String direccion_cliente;
-        private String numero_direccion;
-        private int id_comuna;
         private int celular;
         private String email;
-    
 }

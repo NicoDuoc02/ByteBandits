@@ -1,10 +1,11 @@
-package cl.bytebandits.ventas_vehiculos.controller;
+package cl.bytebandits.ventas_vehiculos.crud.vehiculo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import cl.bytebandits.ventas_vehiculos.model.VehiculoModel;
-import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.model.VehiculoModel;
+import cl.bytebandits.ventas_vehiculos.crud.vehiculo.service.IVehiculoService;
+
 
 @RestController
 @RequestMapping("api/crud/vehiculo")
@@ -19,8 +20,9 @@ public class VehiculoController {
     }
 
     // Actualizar un vehículo
-    @PutMapping("/editar")
-    public VehiculoModel actualizarVehiculo(@RequestBody VehiculoModel vehiculo) {
+    @PutMapping("/editar/{id}")
+    public VehiculoModel actualizarVehiculo(@PathVariable String id, @RequestBody VehiculoModel vehiculo) {
+        vehiculo.setId_Vehiculo(id);
         return vehiculoService.update(vehiculo);
     }
 
