@@ -9,5 +9,7 @@ import cl.bytebandits.ventas_vehiculos.crud.cliente.model.ClienteModel;
 @Repository
 public interface IClienteRepository extends JpaRepository<ClienteModel, String> {
 
+    
+
 
 }
