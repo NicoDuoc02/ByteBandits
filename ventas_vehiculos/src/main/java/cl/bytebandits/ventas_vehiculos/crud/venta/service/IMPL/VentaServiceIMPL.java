@@ -1,11 +1,12 @@
 package cl.bytebandits.ventas_vehiculos.crud.venta.service.IMPL;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cl.bytebandits.ventas_vehiculos.crud.venta.model.VentaModel;
 import cl.bytebandits.ventas_vehiculos.crud.venta.repository.IVentaRepositry;
 import cl.bytebandits.ventas_vehiculos.crud.venta.service.IVentaService;
-
+@Service
 public class VentaServiceIMPL implements IVentaService {
     @Autowired
     private IVentaRepositry ventaRepo;
