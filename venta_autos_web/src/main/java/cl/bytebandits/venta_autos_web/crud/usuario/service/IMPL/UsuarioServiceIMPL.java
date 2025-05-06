@@ -1,20 +1,21 @@
 package cl.bytebandits.venta_autos_web.crud.usuario.service.IMPL;
 
-import cl.bytebandits.venta_autos_web.crud.usuario.model.usuarioModel;
-import cl.bytebandits.venta_autos_web.crud.usuario.repository.IUsuarioRepository;
-import cl.bytebandits.venta_autos_web.crud.usuario.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.bytebandits.venta_autos_web.crud.usuario.model.usuarioModel;
+import cl.bytebandits.venta_autos_web.crud.usuario.repository.IUsuarioRepository;
+import cl.bytebandits.venta_autos_web.crud.usuario.service.IUsuarioService;
+
 @Service
-public class UsuarioServiceIMPL implements IUsuarioService {
+public class UsuarioServiceImpl implements IUsuarioService {
 
     @Autowired
     private IUsuarioRepository usuarioRepository;
 
     @Override
-    public usuarioModel save(usuarioModel usuarioModel) {
-        return usuarioRepository.save(usuarioModel);
+    public usuarioModel save(usuarioModel usuario) {
+        return usuarioRepository.save(usuario);
     }
 
     @Override
@@ -28,22 +29,12 @@ public class UsuarioServiceIMPL implements IUsuarioService {
     }
 
     @Override
-    public usuarioModel update(usuarioModel usuarioModel) {
-        return usuarioRepository.save(usuarioModel);
+    public usuarioModel update(usuarioModel usuario) {
+        return usuarioRepository.save(usuario);
     }
 
     @Override
     public void deleteById(Long id) {
         usuarioRepository.deleteById(id);
-    }
-
-    // Implementación del método para verificar la contraseña
-    @Override
-    public boolean verifyPassword(Long id, String password) {
-        usuarioModel usuario = usuarioRepository.findById(id).orElse(null);
-        if (usuario == null) {
-            return false; // Usuario no encontrado
-        }
-        return usuario.getPassword().equals(password); // Comparar contraseñas
     }
 }

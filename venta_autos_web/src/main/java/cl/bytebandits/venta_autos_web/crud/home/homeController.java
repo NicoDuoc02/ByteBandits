@@ -9,4 +9,9 @@ public class homeController {
     public String home() {
         return "index"; // Retorna la vista index.html
     }
+
+    @GetMapping("/auth/register")
+    public String registerPage() {
+        return "register"; // Renderiza el archivo register.html
+    }
 }
