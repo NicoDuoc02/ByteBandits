@@ -30,21 +30,19 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-   			 <groupId>com.mysql</groupId>
-   			 <artifactId>mysql-connector-j</artifactId>
-   			 <scope>runtime</scope>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>cl.bytebandits</groupId>
 			<artifactId>ventas_vehiculos</artifactId>
-			<version>0.0.1-SNAPSHOT</version>	
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.basc.framework</groupId>
@@ -59,28 +57,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.openliberty.features</groupId>
 			<artifactId>jpa</artifactId>
 			<version>25.0.0.4</version>
 			<type>esa</type>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>jakarta.persistence</artifactId>
 			<version>3.1.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>com.queue-it.connector</groupId>
 			<artifactId>jakarta</artifactId>
 			<version>4.0.14</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -89,7 +81,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -100,8 +91,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -130,5 +129,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
