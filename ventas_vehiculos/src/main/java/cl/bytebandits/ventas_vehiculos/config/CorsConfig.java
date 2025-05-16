@@ -1,4 +1,4 @@
-package cl.bytebandits.ventas_vehiculos.config;
+package cl.bytebandits.ventasVehiculos.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
