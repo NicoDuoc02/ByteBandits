@@ -1,0 +1,10 @@
+package cl.bytebandits.ventas_vehiculos.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import cl.bytebandits.ventas_vehiculos.model.Vendedor;
+
+public interface IVendedorRepository extends CrudRepository<Vendedor,Integer> {
+
+
+}
