@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 
 //indica la tabla en la base de datos
-@Table(name="MARCA")
+@Table(name="MODELO")
 
 @Getter
 @Setter

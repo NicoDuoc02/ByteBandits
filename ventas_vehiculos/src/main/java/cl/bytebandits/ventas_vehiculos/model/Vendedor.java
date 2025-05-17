@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
 @Entity
 
 //indica la tabla en la base de datos
-@Table(name="Vendedor")
+@Table(name="VENDEDOR")
 
 @Getter
 @Setter
