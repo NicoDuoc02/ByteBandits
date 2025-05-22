@@ -3,6 +3,8 @@ package cl.bytebandits.ventas_vehiculos.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +21,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Marca {
 
 //Especifica que es la PK
@@ -28,7 +31,10 @@ public class Marca {
 private Integer idMarca;
 @Column(name="NOMBRE_MARCA")
 private String nombreMarca;
-@Column(name="ID_PAIS_ORIGEN")
+//define cómo se mapea la relación entre las entidades 
+@ManyToOne //muchos a uno
+//permiten que JPA gestione automáticamente la creación de la foreign key en la base de datos
+@JoinColumn(name="ID_PAIS_ORIGEN")
 private PaisOrigen paisOrigen;
 
 }
