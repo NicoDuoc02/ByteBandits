@@ -11,7 +11,6 @@ import cl.bytebandits.ventas_vehiculos.model.Vehiculo;
 import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
 import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
 import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
-import jakarta.transaction.Transactional;
 
 @Service
 
