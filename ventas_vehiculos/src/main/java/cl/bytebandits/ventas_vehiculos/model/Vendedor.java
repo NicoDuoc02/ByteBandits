@@ -33,9 +33,7 @@ private String nombreVendedor;
 private String apPAterno;
 @Column(name="APP_MATERNO")
 private String apMAterno;
-//@Column(name="CELULAR")
 private Integer celular;
-//@Column(name="EMAIL")
 private String email;
 
 

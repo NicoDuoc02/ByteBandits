@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import cl.bytebandits.ventas_vehiculos.dto.ColorDTO;
 import cl.bytebandits.ventas_vehiculos.model.Color;
 import cl.bytebandits.ventas_vehiculos.response.ColorResponse;
+import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
 import cl.bytebandits.ventas_vehiculos.service.IColorService;
 
 @RestController
@@ -28,8 +31,18 @@ public class ColorController {
         return colorService.getAll();
     }
 
+    @GetMapping("/{idColor}")
+    public ColorResponse getByIdColor(@PathVariable Integer idColor){
+        return colorService.getByIdColor(idColor);
+    }
+
     @PostMapping
     public Color grabar(@RequestBody ColorDTO color){
         return colorService.grabar(color);
     }
+
+     /*@PutMapping("/{idColor}")
+    public Color update(@PathVariable Integer idColor,@RequestBody ColorDTO colorDTO){
+        return colorService.update(idColor,colorDTO);
+    }*/
 }

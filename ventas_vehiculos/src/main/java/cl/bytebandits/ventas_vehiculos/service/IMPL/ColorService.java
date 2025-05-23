@@ -38,11 +38,24 @@ public class ColorService implements IColorService {
 
 
     }
+     @Override
+    public ColorResponse getByIdColor(Integer idColor){
+        Color col = colorRepository.findById(idColor).get();
+        ColorResponse colRes = modelmap.map(col, ColorResponse.class);
+        return colRes;
+    }
 
+
+    @Override
     public Color grabar(ColorDTO color) {
         Color col = modelmap.map(color, Color.class);
         return colorRepository.save(col);
     }
+
+
+
+
+
 
     
 

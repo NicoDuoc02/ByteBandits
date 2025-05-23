@@ -11,4 +11,6 @@ public interface IColorService {
     Color grabar(ColorDTO color);
 
     List<ColorResponse> getAll();
+
+    ColorResponse getByIdColor(Integer color);
 }

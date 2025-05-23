@@ -1,6 +1,6 @@
 package cl.bytebandits.ventas_vehiculos.response;
 
-import jakarta.persistence.Column;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ColorResponse {
 private Integer idColor;
 private String nombreColor;

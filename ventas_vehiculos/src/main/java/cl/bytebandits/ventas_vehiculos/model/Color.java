@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,11 @@ import lombok.Setter;
 public class Color {
 //Especifica que es la PK
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+//Genera secuencia
+@SequenceGenerator(name="col_seq", sequenceName="col_sequence",
+initialValue=1, allocationSize=1)
+//Genera id automaticamente
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="col_seq")
 //nombre real de la columna
 @Column(name="ID_COLOR")
 private Integer idColor;

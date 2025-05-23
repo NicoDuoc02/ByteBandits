@@ -17,6 +17,5 @@ public class ColorDTO {
 
 private Integer idColor;
 private String nombreColor;
-List<ColorDTO> color;
 
 }
