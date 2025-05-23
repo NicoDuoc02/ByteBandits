@@ -1,4 +1,4 @@
-/*package cl.bytebandits.ventas_vehiculos.config;
+package cl.bytebandits.ventas_vehiculos.config;
  
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,4 +19,4 @@ public class CorsConfig {
             }
         };
     }
-}  */
+}  

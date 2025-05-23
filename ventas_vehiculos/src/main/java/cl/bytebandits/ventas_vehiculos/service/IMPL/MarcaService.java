@@ -6,7 +6,6 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import cl.bytebandits.ventas_vehiculos.model.Marca;
 import cl.bytebandits.ventas_vehiculos.repository.IMarcaRepository;
 import cl.bytebandits.ventas_vehiculos.response.MarcaResponse;
@@ -39,8 +38,9 @@ public class MarcaService implements IMarcaService {
 
     @Override
     public MarcaResponse getByIdMarca(Integer idMarca) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByIdMarca'");
+        Marca mar = marcaRepository.findById(idMarca).get();
+        MarcaResponse marRes = modelmap.map(mar, MarcaResponse.class);
+        return marRes;
     }
 
     
