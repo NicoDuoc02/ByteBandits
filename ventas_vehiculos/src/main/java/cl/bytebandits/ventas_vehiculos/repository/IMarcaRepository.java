@@ -1,5 +1,9 @@
 package cl.bytebandits.ventas_vehiculos.repository;
 
-public interface IMarcaRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import cl.bytebandits.ventas_vehiculos.model.Marca;
+
+public interface IMarcaRepository extends CrudRepository<Marca, Integer>{
 
 }

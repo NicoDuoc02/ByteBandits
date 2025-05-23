@@ -1,5 +1,5 @@
 package cl.bytebandits.ventas_vehiculos.model;
-
+ 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -34,9 +34,7 @@ private String nombreCliente;
 private String apPaterno;
 @Column(name="APP_MATERNO")
 private String apMaterno;
-private Integer celular;
+private String celular;
 private String email;
-
-
 
 }

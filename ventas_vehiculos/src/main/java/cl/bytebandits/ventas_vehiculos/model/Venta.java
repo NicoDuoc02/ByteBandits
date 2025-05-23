@@ -1,5 +1,5 @@
 package cl.bytebandits.ventas_vehiculos.model;
-
+/* 
 import java.sql.Date;
 
 import jakarta.persistence.Column;
@@ -43,3 +43,5 @@ private Double precioVenta;
 private FormaPago formaPago;
 
 }
+
+*/
