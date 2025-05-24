@@ -6,7 +6,6 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import cl.bytebandits.ventas_vehiculos.model.Vehiculo;
 import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
 import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
@@ -35,13 +34,14 @@ public class VehiculoService implements IVehiculoService{
 
        return lVehRes;
 
-
     }
 
     @Override
     public VehiculoResponse getByPatente(String patente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByPatente'");
+        patente = patente.toUpperCase();
+        Vehiculo pat = vehiculoRepository.findById(patente).get();
+        VehiculoResponse patRes = modelmap.map(pat, VehiculoResponse.class);
+        return patRes;
     }
 
 }

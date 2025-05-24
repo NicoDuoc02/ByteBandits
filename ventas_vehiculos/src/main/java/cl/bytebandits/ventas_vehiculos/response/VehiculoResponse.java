@@ -17,13 +17,11 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class VehiculoResponse {
-    // Simplemente los datos que quieres exponer
-    private String patente; // Simplemente los datos que quieres exponer
-    //private String nombreModelo; 
-    //private String nombreMarca;  
-    //private Date anio;
-    //private String nombreColor;  
+    private String patente; 
+    private Modelo modelo; 
+    private Date anio;
+    private Color color;  
     private Double precio;
     //private Date fechaIngreso;
-    //private String nombreEstadoVehiculo; 
+    //private EstadoVehiculo estadoVehiculo; 
 }

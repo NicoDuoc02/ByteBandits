@@ -37,6 +37,7 @@ public class ModeloService implements IModeloService {
 
     @Override
     public ModeloResponse getByIdModelo(String idModelo) {
+        idModelo = idModelo.toUpperCase();
         Modelo mod = modeloRepository.findById(idModelo).get();
         ModeloResponse modRes = modelmap.map(mod, ModeloResponse.class);
         return modRes;
