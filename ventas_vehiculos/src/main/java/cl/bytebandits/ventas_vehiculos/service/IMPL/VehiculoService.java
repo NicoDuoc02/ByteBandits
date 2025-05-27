@@ -6,6 +6,8 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import cl.bytebandits.ventas_vehiculos.dto.VehiculoDTO;
 import cl.bytebandits.ventas_vehiculos.model.Vehiculo;
 import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
 import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
@@ -42,6 +44,19 @@ public class VehiculoService implements IVehiculoService{
         Vehiculo pat = vehiculoRepository.findById(patente).get();
         VehiculoResponse patRes = modelmap.map(pat, VehiculoResponse.class);
         return patRes;
+    }
+
+    @Override
+    public VehiculoResponse grabarVehiculo(VehiculoDTO vehiculoDTO) {
+       
+        Vehiculo vehGuardar = modelmap.map(vehiculoDTO, Vehiculo.class);
+        vehGuardar.setPatente(vehGuardar.getPatente().toUpperCase());
+
+        // Guarda la entidad Vehiculo en la base de datos
+        Vehiculo guardarVehiculo = vehiculoRepository.save(vehGuardar);
+
+        // Mapea la entidad guardada a VehiculoResponse para la respuesta de la API
+        return modelmap.map(guardarVehiculo, VehiculoResponse.class);
     }
 
 }
