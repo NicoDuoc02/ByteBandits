@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class ModeloResponse {
-    private String idModelo;
+    //private String idModelo;
     private String nombreModelo; 
     private TipoVehiculo tipoVehiculo; 
     private Marca marca;             

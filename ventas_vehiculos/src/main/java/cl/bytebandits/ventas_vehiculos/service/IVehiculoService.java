@@ -15,8 +15,6 @@ public interface IVehiculoService {
 
     VehiculoResponse updateVehiculo(String patente, VehiculoDTO vehiculoDTO);
 
-    
-
-    
+    VehiculoResponse deteleVehiculo(String patente);    
 
 }

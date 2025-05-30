@@ -8,7 +8,7 @@ POST
     "idModelo": "M004",
     "anio": "2023-01-01",
     "idColor": 1001,
-    "precio": 250000,
+    "precio": 2500000,
     "fechaIngreso": "2024-05-27",
     "idEstadoVehiculo": 1
 }
@@ -18,9 +18,13 @@ PUT
 
 {
     "idModelo": "M003",
-    "anio": "2024-01-01",
-    "idColor": 1001,
+    "anio": "2024-05-01",
+    "idColor": 1003,
     "precio": 200000,
     "fechaIngreso": "2024-05-30",
     "idEstadoVehiculo": 2
 }
+
+DELETE 
+
+TRXE25

@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.bytebandits.ventas_vehiculos.dto.VehiculoDTO;
-import cl.bytebandits.ventas_vehiculos.dto.ColorDTO;
 import cl.bytebandits.ventas_vehiculos.model.Color;
+import cl.bytebandits.ventas_vehiculos.model.EstadoVehiculo;
+import cl.bytebandits.ventas_vehiculos.model.Modelo;
 import cl.bytebandits.ventas_vehiculos.model.Vehiculo;
 import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
 import cl.bytebandits.ventas_vehiculos.repository.IColorRepository;
+import cl.bytebandits.ventas_vehiculos.repository.IEstadoVehiculoRepository;
+import cl.bytebandits.ventas_vehiculos.repository.IModeloRepository;
 import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
 import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
 
@@ -26,8 +29,12 @@ public class VehiculoService implements IVehiculoService{
     @Autowired
     IColorRepository colorRepository;
 
+    @Autowired
+    IModeloRepository modeloRepository;
 
-    
+    @Autowired
+    IEstadoVehiculoRepository estadoVehiculoRepository;
+
     @Autowired
     ModelMapper modelmap;
 
@@ -69,17 +76,40 @@ public class VehiculoService implements IVehiculoService{
      
     @Override
     public VehiculoResponse updateVehiculo(String patente, VehiculoDTO vehiculoDTO) {
+             patente = patente.toUpperCase();
              Vehiculo vehiculo = vehiculoRepository.findById(patente).get();
 
-             // Mapeo seguro (ignora relaciones)
-              modelmap.map(vehiculoDTO, vehiculo);
+              // Actualizar los id de manera manual para que no de error
+              Color col = colorRepository.findById(vehiculoDTO.getIdColor()).get();
+              vehiculo.setColor(col);
 
-              // Actualizar color MANUALMENTE si está presente en el DTO
-              Color nuevoColor = colorRepository.findById(ColorDTO.getIdColor()).get();
-              vehiculo.setColor(nuevoColor);
-           
-            return modelmap.map(vehiculo, VehiculoResponse.class);
+              Modelo mod = modeloRepository.findById(vehiculoDTO.getIdModelo()).get();
+              vehiculo.setModelo(mod);
+
+              EstadoVehiculo est = estadoVehiculoRepository.findById(vehiculoDTO.getIdEstadoVehiculo()).get();
+              vehiculo.setEstadoVehiculo(est);
+
+              vehiculo.setAnio(vehiculoDTO.getAnio());
+              vehiculo.setPrecio(vehiculoDTO.getPrecio());
+              vehiculo.setFechaIngreso(vehiculoDTO.getFechaIngreso());
+
+              vehiculoRepository.save(vehiculo);
+
+              return modelmap.map(vehiculo, VehiculoResponse.class);
     }
+
+     @Override
+     public VehiculoResponse deleteVehiculo(String patente) {
+       patente = patente.toUpperCase(); 
+
+    Vehiculo vehBorrar = vehiculoRepository.findById(patente).get(); 
+    
+    VehiculoResponse eliminar = modelmap.map(vehBorrar, VehiculoResponse.class);
+
+    vehiculoRepository.deleteById(patente);
+    
+    return eliminar;
+}
 
 
 }

@@ -3,6 +3,7 @@ package cl.bytebandits.ventas_vehiculos.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +35,11 @@ public class VehiculoController {
         return vehiculoService.getByPatente(patente);
     }
 
+    @GetMapping("/{modelo}")
+    public VehiculoResponse getByModelo(@PathVariable String modelo){
+        return vehiculoService.getByModelo(modelo);
+    }
+
     @PostMapping
     public VehiculoResponse grabarVehiculo(@RequestBody VehiculoDTO vehiculoDTO){
         // Llama al servicio para guardar el vehículo, pasándole el DTO de entrada
@@ -46,5 +52,11 @@ public class VehiculoController {
         // Llama al servicio para actualizar el vehículo, pasándole la patente y el DTO
         return vehiculoService.updateVehiculo(patente, vehiculoDTO);
     }
+
+    @DeleteMapping("/{patente}")
+     public VehiculoResponse deleteVehiculo(@PathVariable String patente) {
+
+        return vehiculoService.deteleVehiculo(patente);
+     }
 
 }
