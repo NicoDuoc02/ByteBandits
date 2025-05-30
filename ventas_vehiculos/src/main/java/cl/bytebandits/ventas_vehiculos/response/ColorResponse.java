@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class ColorResponse {
-private Integer idColor;
+//private Integer idColor;
 private String nombreColor;
 
 }

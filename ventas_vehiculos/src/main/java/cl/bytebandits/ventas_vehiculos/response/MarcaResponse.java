@@ -14,7 +14,7 @@ import lombok.Setter;
 
 public class MarcaResponse {
 
-    //private Integer idMarca;
+    private Integer idMarca;
     private String nombreMarca;
     private PaisOrigen paisOrigen;
 }
