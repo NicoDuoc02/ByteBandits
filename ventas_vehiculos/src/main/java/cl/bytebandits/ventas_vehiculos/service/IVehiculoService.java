@@ -13,6 +13,8 @@ public interface IVehiculoService {
 
     VehiculoResponse grabarVehiculo(VehiculoDTO vehiculoDTO);
 
+    VehiculoResponse updateVehiculo(String patente, VehiculoDTO vehiculoDTO);
+
     
 
     

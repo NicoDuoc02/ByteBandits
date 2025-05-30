@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.bytebandits.ventas_vehiculos.dto.VehiculoDTO;
+import cl.bytebandits.ventas_vehiculos.dto.ColorDTO;
+import cl.bytebandits.ventas_vehiculos.model.Color;
 import cl.bytebandits.ventas_vehiculos.model.Vehiculo;
 import cl.bytebandits.ventas_vehiculos.repository.IVehiculoRepository;
+import cl.bytebandits.ventas_vehiculos.repository.IColorRepository;
 import cl.bytebandits.ventas_vehiculos.response.VehiculoResponse;
 import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
 
@@ -19,6 +22,11 @@ public class VehiculoService implements IVehiculoService{
 
     @Autowired
     IVehiculoRepository vehiculoRepository;
+
+    @Autowired
+    IColorRepository colorRepository;
+
+
     
     @Autowired
     ModelMapper modelmap;
@@ -58,5 +66,20 @@ public class VehiculoService implements IVehiculoService{
         // Mapea la entidad guardada a VehiculoResponse para la respuesta de la API
         return modelmap.map(guardarVehiculo, VehiculoResponse.class);
     }
+     
+    @Override
+    public VehiculoResponse updateVehiculo(String patente, VehiculoDTO vehiculoDTO) {
+             Vehiculo vehiculo = vehiculoRepository.findById(patente).get();
+
+             // Mapeo seguro (ignora relaciones)
+              modelmap.map(vehiculoDTO, vehiculo);
+
+              // Actualizar color MANUALMENTE si está presente en el DTO
+              Color nuevoColor = colorRepository.findById(ColorDTO.getIdColor()).get();
+              vehiculo.setColor(nuevoColor);
+           
+            return modelmap.map(vehiculo, VehiculoResponse.class);
+    }
+
 
 }
