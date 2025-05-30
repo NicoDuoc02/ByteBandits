@@ -35,11 +35,6 @@ public class VehiculoController {
         return vehiculoService.getByPatente(patente);
     }
 
-    @GetMapping("/{modelo}")
-    public VehiculoResponse getByModelo(@PathVariable String modelo){
-        return vehiculoService.getByModelo(modelo);
-    }
-
     @PostMapping
     public VehiculoResponse grabarVehiculo(@RequestBody VehiculoDTO vehiculoDTO){
         // Llama al servicio para guardar el vehículo, pasándole el DTO de entrada
@@ -56,7 +51,7 @@ public class VehiculoController {
     @DeleteMapping("/{patente}")
      public VehiculoResponse deleteVehiculo(@PathVariable String patente) {
 
-        return vehiculoService.deteleVehiculo(patente);
+        return vehiculoService.deleteVehiculo(patente);
      }
 
 }
