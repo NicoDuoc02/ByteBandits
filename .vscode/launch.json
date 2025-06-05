@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "VentasVehiculosApplication",
+            "request": "launch",
+            "mainClass": "cl.bytebandits.ventas_vehiculos.VentasVehiculosApplication",
+            "projectName": "ventas_vehiculos"
+        },
+        {
+            "type": "java",
+            "name": "VentasVehiculosWebApplication",
+            "request": "launch",
+            "mainClass": "cl.bytebandits.ventas_vehiculos_web.VentasVehiculosWebApplication"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AdministradorWeb<venta_autos_web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "cl.bytebandits.venta_autos_web.AdministradorWeb",
+            "projectName": "venta_autos_web",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
