@@ -1,5 +1,10 @@
 package cl.bytebandits.ventas_vehiculos.repository;
 
-public interface IClienteRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import cl.bytebandits.ventas_vehiculos.model.Cliente;
+
+public interface IClienteRepository extends CrudRepository<Cliente, Integer> {
+    
 
 }
