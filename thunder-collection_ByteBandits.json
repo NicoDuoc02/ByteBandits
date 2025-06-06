@@ -1,0 +1,69 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ByteBandits",
+    "collectionId": "a73c91d1-18bf-4124-a169-eb4ad5bf1768",
+    "dateExported": "2025-05-30T23:29:06.062Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ebd60bed-bcb9-4285-83ff-382ed8ed10e0",
+            "colId": "a73c91d1-18bf-4124-a169-eb4ad5bf1768",
+            "containerId": "",
+            "name": "localhost:8091/api/crud/vehiculos",
+            "url": "localhost:8091/api/crud/vehiculos",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-05-30T23:24:35.856Z",
+            "modified": "2025-05-30T23:24:35.856Z",
+            "headers": []
+        },
+        {
+            "_id": "3865461b-c391-45c4-a780-46b9fd212657",
+            "colId": "a73c91d1-18bf-4124-a169-eb4ad5bf1768",
+            "containerId": "",
+            "name": "localhost:8091/api/crud/vehiculos",
+            "url": "localhost:8091/api/crud/vehiculos",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-05-30T23:25:54.306Z",
+            "modified": "2025-05-30T23:25:54.306Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"patente\": \"TRXE25\", \r\n    \"idModelo\": \"M004\",\r\n    \"anio\": \"2023-01-01\",\r\n    \"idColor\": 1001,\r\n    \"precio\": 2500000,\r\n    \"fechaIngreso\": \"2024-05-27\",\r\n    \"idEstadoVehiculo\": 1\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "83f00eb3-4d05-4c00-8cf9-f0f91f693046",
+            "colId": "a73c91d1-18bf-4124-a169-eb4ad5bf1768",
+            "containerId": "",
+            "name": "localhost:8091/api/crud/vehiculos/trxe25",
+            "url": "localhost:8091/api/crud/vehiculos/trxe25",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2025-05-30T23:27:17.217Z",
+            "modified": "2025-05-30T23:27:17.218Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"idModelo\": \"M003\",\r\n    \"anio\": \"2024-05-01\",\r\n    \"idColor\": 1003,\r\n    \"precio\": 200000,\r\n    \"fechaIngreso\": \"2024-05-30\",\r\n    \"idEstadoVehiculo\": 2\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "921d26e2-81b5-4b4a-9bed-582564c64ade",
+            "colId": "a73c91d1-18bf-4124-a169-eb4ad5bf1768",
+            "containerId": "",
+            "name": "localhost:8091/api/crud/vehiculos/trxe25",
+            "url": "localhost:8091/api/crud/vehiculos/trxe25",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2025-05-30T23:28:33.881Z",
+            "modified": "2025-05-30T23:28:33.881Z",
+            "headers": []
+        }
+    ],
+    "ref": "GXWWll8p38XpGN4iIZISYdNeecCYHOPToulZGV2P0bsU0ogCC0Z6CDSTKpeCDY9GKttYd38WAypDKKDWp1QwTg"
+}

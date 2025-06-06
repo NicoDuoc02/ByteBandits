@@ -18,6 +18,7 @@ import cl.bytebandits.ventas_vehiculos.service.IVehiculoService;
 
 @RestController
 
+//recibe, delega y entrga respuesta HTTP (endpoints)
 
 @RequestMapping("/api/crud/vehiculos")
 public class VehiculoController {
@@ -49,7 +50,7 @@ public class VehiculoController {
     }
 
     @DeleteMapping("/{patente}")
-     public VehiculoResponse deleteVehiculo(@PathVariable String patente) {
+     public VehiculoResponse deleteVehiculo(@PathVariable String patente) { //pathvariavle extrae los valores de la ruta url
 
         return vehiculoService.deleteVehiculo(patente);
      }

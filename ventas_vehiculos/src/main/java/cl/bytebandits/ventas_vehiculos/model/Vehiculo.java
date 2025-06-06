@@ -17,8 +17,8 @@ import lombok.Setter;
 //indica que es una entidad en JPA
 @Entity
 
-//indica la tabla en la base de datos
-@Table(name="VEHICULO")
+// indica la tabla en la base de datos
+@Table(name = "VEHICULO")
 
 @Getter
 @Setter
@@ -26,23 +26,25 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class Vehiculo {
-//Especifica que es la PK
-@Id
-private String patente;
-//define cómo se mapea la relación entre las entidades 
-@ManyToOne(fetch = FetchType.EAGER) //muchos a uno
-//permiten que JPA gestione automáticamente la creación de la foreign key en la base de datos
-@JoinColumn(name="ID_MODELO")
-private Modelo modelo;
-private Date anio;
-@ManyToOne(fetch = FetchType.EAGER)
-@JoinColumn(name="ID_COLOR")
-private Color color;
-private Double precio;
-@Column(name="FECHA_INGRESO")
-private Date fechaIngreso;
-@ManyToOne(fetch = FetchType.EAGER)
-@JoinColumn(name="ID_ESTADO_VEHICULO")
-private EstadoVehiculo estadoVehiculo;
+    // Especifica que es la PK
+    @Id
+    private String patente;
+    // JPA intentará cargar la entidad relacionada inmediatamente en el momento en
+    // que se carga la entidad principal.
+    @ManyToOne(fetch = FetchType.EAGER) // relacion de muchos es a uno
+    // permiten que JPA gestione automáticamente la creación de la foreign key en la
+    // base de datos
+    @JoinColumn(name = "ID_MODELO")
+    private Modelo modelo;
+    private Date anio;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ID_COLOR")
+    private Color color;
+    private Double precio;
+    @Column(name = "FECHA_INGRESO")
+    private Date fechaIngreso;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ID_ESTADO_VEHICULO")
+    private EstadoVehiculo estadoVehiculo;
 
 }

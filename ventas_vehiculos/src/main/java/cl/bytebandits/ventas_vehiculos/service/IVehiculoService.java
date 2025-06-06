@@ -18,3 +18,5 @@ public interface IVehiculoService {
     VehiculoResponse deleteVehiculo(String patente);   
 
 }
+
+//Intermediario entre el controller y los repository

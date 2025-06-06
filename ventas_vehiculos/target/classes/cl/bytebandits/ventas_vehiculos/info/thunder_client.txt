@@ -28,3 +28,5 @@ PUT
 DELETE 
 
 TRXE25
+
+localhost:8091/api/crud/vehiculos/trxe25

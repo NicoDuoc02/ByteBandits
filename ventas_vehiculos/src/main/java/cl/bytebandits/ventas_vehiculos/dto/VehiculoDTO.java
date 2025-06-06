@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class VehiculoDTO {
-    //solo van los ids que queremos guardar, ya que seria muy largo guardar todo
+    //solo van los ids que queremos utilizar, ya que seria muy largo utilizar todo el objeto
     //esto hace que la bd se encargue de traer lo demas segun la pk (id)
     private String patente; 
     private String idModelo; 
@@ -25,3 +25,4 @@ public class VehiculoDTO {
 
 
 }
+

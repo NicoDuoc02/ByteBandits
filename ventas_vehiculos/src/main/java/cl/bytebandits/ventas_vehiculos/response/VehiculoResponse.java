@@ -22,6 +22,6 @@ public class VehiculoResponse {
     private Date anio;
     private Color color;  
     private Double precio;
-    //private Date fechaIngreso;
-    //private EstadoVehiculo estadoVehiculo; 
+    private Date fechaIngreso;
+    private EstadoVehiculo estadoVehiculo; 
 }
